@@ -1,0 +1,7 @@
+# import CurrentWeather from "current-weather.graphql"
+# import FiveDayForecast from "five-day-forecast.graphql"
+
+type Query {
+  currentWeather: CurrentWeather
+  fiveDayForecast: FiveDayForecast
+}

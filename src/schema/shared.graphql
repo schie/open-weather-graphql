@@ -1,0 +1,56 @@
+enum Units {
+  metric
+  imperial
+}
+
+type Main {
+  temp: Float
+  tempMin: Float
+  tempMax: Float
+  pressure: Float
+  seaLevelPressure: Float
+  groundLevelPressure: Float
+  humidity: Float
+  tempKf: Float
+}
+
+type Rain {
+  volumePast3Hours: Float
+}
+
+type Snow {
+  volumePast3Hours: Float
+}
+
+type Clouds {
+  all: Float
+}
+
+type Wind {
+  speed: Float
+  deg: Float
+}
+
+# geographic coordinate
+type Coordinate {
+  # latitude
+  lat: Float
+  # longitude
+  lon: Float
+}
+
+type Weather {
+  id: Int
+  main: String
+  description: String
+  icon: String
+  iconURL: String
+}
+
+type City {
+  id: Int
+  name: String
+  coord: Coordinate
+  country: String
+}
+
