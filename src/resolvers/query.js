@@ -1,4 +1,6 @@
+const simpleResolve = (_, { appId }) => ({ appId });
+
 module.exports = {
-  currentWeather: () => ({}),
-  fiveDayForecast: () => ({})
-}
+  currentWeather: simpleResolve,
+  fiveDayForecast: simpleResolve
+};
