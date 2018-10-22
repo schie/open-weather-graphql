@@ -1,13 +1,13 @@
 {
-  "name": "GraphCool",
+  "name": "open-weather-graphql",
   "version": "0.1.0",
-  "description": "",
+  "description": "graphql wrapper for open weather api",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -e js,graphql src/index.js"
   },
   "keywords": [],
-  "author": "Dustin Schie",
+  "author": "Dustin Schie <dustin@schie.io>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "6.26.0",
