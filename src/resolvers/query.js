@@ -1,4 +1,4 @@
-const simpleResolve = (_, { appId }) => ({ appId });
+const simpleResolve = (_, { appId, lang }) => ({ appId, lang });
 
 module.exports = {
   currentWeather: simpleResolve,
