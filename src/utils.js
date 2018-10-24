@@ -3,7 +3,7 @@ const _ = require('lodash');
 
 module.exports = {
   get: (url, appId, queries = {}) => {
-    queryString = _.chain({ ...queries, APPID: appId })
+    const queryString = _.chain({ ...queries, APPID: appId })
       .toPairs()
       .map(p => p.join('='))
       .join('&')
