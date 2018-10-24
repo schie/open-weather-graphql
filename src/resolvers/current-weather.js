@@ -1,4 +1,4 @@
-const { addUnits, get, addLanguage } = require('../utils');
+const { get } = require('../utils');
 
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -8,29 +8,34 @@ module.exports = {
     if (countryCode && countryCode.trim()) {
       location.push(countryCode.trim());
     }
-    return get(
-      `${CURRENT_WEATHER_URL}?APPID=${appId}&q=${location.join()}${addUnits(units)}${addLanguage(
-        lang
-      )}`
-    );
+    return get(CURRENT_WEATHER_URL, appId, {
+      q: location.join(),
+      units,
+      lang
+    });
   },
   byCityID: ({ appId, lang }, { id, units }) =>
-    get(`${CURRENT_WEATHER_URL}?APPID=${appId}&id=${id}${addUnits(units)}${addLanguage(lang)}`),
+    get(CURRENT_WEATHER_URL, appId, {
+      units,
+      lang,
+      id
+    }),
   byLatLon: ({ appId, lang }, { lat, lon, units }) =>
-    get(
-      `${CURRENT_WEATHER_URL}?APPID=${appId}&lat=${lat}&lon=${lon}${addUnits(units)}${addLanguage(
-        lang
-      )}`
-    ),
+    get(CURRENT_WEATHER_URL, appId, {
+      lat,
+      lon,
+      units,
+      lang
+    }),
   byZIP: ({ appId, lang }, { zip, countryCode, units }) => {
     const location = [zip];
     if (countryCode && countryCode.trim()) {
       location.push(countryCode.trim());
     }
-    return get(
-      `${CURRENT_WEATHER_URL}?APPID=${appId}&zip=${location.join()}${addUnits(units)}${addLanguage(
-        lang
-      )}`
-    );
+    return get(CURRENT_WEATHER_URL, appId, {
+      zip: location.join(),
+      units,
+      lang
+    });
   }
 };
