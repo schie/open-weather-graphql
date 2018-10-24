@@ -1,6 +1,7 @@
 enum Units {
   metric
   imperial
+  standard
 }
 
 enum Language {
