@@ -1,6 +1,6 @@
 {
   "name": "open-weather-graphql",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "graphql wrapper for open weather api",
   "main": "index.js",
   "scripts": {
