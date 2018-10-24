@@ -1,7 +1,8 @@
 # import CurrentWeather from "current-weather.graphql"
 # import FiveDayForecast from "five-day-forecast.graphql"
+# import Language from "shared.graphql"
 
 type Query {
-  currentWeather(appId: String!): CurrentWeather
-  fiveDayForecast(appId: String!): FiveDayForecast
+  currentWeather(appId: String!, lang: Language = en): CurrentWeather
+  fiveDayForecast(appId: String!, lang: Language = en): FiveDayForecast
 }
