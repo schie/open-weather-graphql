@@ -15,14 +15,13 @@ type FiveDayForecastResponse {
   cod: String
   message: String
   city: City
-  elementCount: Int,
+  elementCount: Int
   list: [FiveDayForecastElement]
 }
 
 type FiveDayForecast {
-  byCityName(name: String!, countryCode: String, units: Units): FiveDayForecastResponse
+  byCityName(name: String!, countryCode: String): FiveDayForecastResponse
   byCityID(id: Int!, units: Units): FiveDayForecastResponse
-  byLatLon(lat: Float!, lon: Float!, units: Units): FiveDayForecastResponse
-  byZIP(zip: Float!, countryCode: String, units: Units): FiveDayForecastResponse
+  byLatLon(lat: Float!, lon: Float!): FiveDayForecastResponse
+  byZIP(zip: Float!, countryCode: String): FiveDayForecastResponse
 }
-

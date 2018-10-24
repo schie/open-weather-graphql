@@ -3,7 +3,7 @@ const { get } = require('../utils');
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 module.exports = {
-  byCityName: ({ appId, lang }, { name, countryCode, units }) => {
+  byCityName: ({ appId, lang, units }, { name, countryCode }) => {
     const location = [name];
     if (countryCode && countryCode.trim()) {
       location.push(countryCode.trim());
@@ -14,20 +14,20 @@ module.exports = {
       lang
     });
   },
-  byCityID: ({ appId, lang }, { id, units }) =>
+  byCityID: ({ appId, lang, units }, { id }) =>
     get(CURRENT_WEATHER_URL, appId, {
       units,
       lang,
       id
     }),
-  byLatLon: ({ appId, lang }, { lat, lon, units }) =>
+  byLatLon: ({ appId, lang, units }, { lat, lon }) =>
     get(CURRENT_WEATHER_URL, appId, {
       lat,
       lon,
       units,
       lang
     }),
-  byZIP: ({ appId, lang }, { zip, countryCode, units }) => {
+  byZIP: ({ appId, lang, units }, { zip, countryCode }) => {
     const location = [zip];
     if (countryCode && countryCode.trim()) {
       location.push(countryCode.trim());
